@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>{% block title %}Mis Perris {% endblock %}</title>
+</head>
+<body>
+	{% block header %}
+	{% include 'base/header.html' %}
+	{% endblock %}
+
+	{% block content %}
+	<H5>Este en el contenido del bloque base</H5>
+	{% endblock %}
+
+	{%block footer %}
+	<h5>Soy el footer del base</h5>
+	{% endblock %}
+
+</body>
+</html>
