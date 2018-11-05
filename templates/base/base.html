@@ -2,19 +2,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>{% block title %}Mis Perris {% endblock %}</title>
+ 	<title>{% block title %}Mis Perris {% endblock %}</title>
+
+
+<link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="{% static 'js/jR3DCarousel.js' %}"></script>
+
+<style>
+	.primercolor { background	: #6dccaa;
+		color			: white;
+		font-family		: calibri;
+		font-weight		: bold;
+		font-size		: 24px;
+	seccionBlanca
+	}
+	</style>
+
+	<style>
+	.segundocolor { background	: #ffffff 
+	</style>
+
 </head>
 <body>
 	{% block header %}
 	{% include 'base/header.html' %}
 	{% endblock %}
 
+
 	{% block content %}
-	<H5>Este en el contenido del bloque base</H5>
+
+			<div class="row center-sm">
+			<div class="carousel-demo">
+
+			<script>
+				var slides = [
+					{src: "{% static 'img/perro.png' %}"},
+					{src: "{% static 'img/adoptados/Apolo.jpg' %}"},
+					{src: "{% static 'img/adoptados/Duque.jpg' %}"},
+					{src: "{% static 'img/adoptados/Tom.jpg' %}"},
+				];
+
+				$('.carousel-demo').jR3DCarousel({
+				  width : 700,        
+				  height: 450,    
+				  slides: slides,
+				  animation: "slide",
+				});
+			</script>
+			</div>
+		</div>
+
+
+
+		<div class="row primercolor">
+			<div class="col-xs-2 col-sm-2">
+			</div>
+			<div class="col-xs-2 col-sm-2 center-xs">
+				<img class="image-responsive" src="{% static 'img/facebook.png' %}"> 
+			</div>
+			<div class="col-xs-2 col-sm-2 center-xs"> 
+				<img class="image-responsive" src="{% static 'img/skype.png' %}"> 
+			</div>
+			<div class="col-xs-2 col-sm-2 center-xs"> 
+				<img class="image-responsive" src="{% static 'img/google+.png' %}"> 
+			</div>
+			<div class="col-xs-2 col-sm-2 center-xs"> 
+				<img class="image-responsive" src="{% static 'img/twitter.png' %}"> 
+			</div>
+			<div class="col-sm-2">
+			</div>
+		</div>
+
+
+
+			<div class="row segundocolor">
+			<div class="col-xs-12 end-xs">
+				<p><big><b><a name="rescate"><font color=black>RESCATE</font></a> </b></big></p>
+					<p> <small>ETAPA UNO </small> </p>
+					<div style="text-align: right; ">Rescatamos perros en situación de peligro y/o abandono.
+					Los rehabilitamos y los preparamos para buscarles un hogar.</div>
+					<p> <img class="image-responsive" src="{% static 'img/rescate.jpg' %}" align="right"> </p>
+				</div>
+
+						<div class="col-xs-12 start-xs">
+						<img class="image-responsive" src="{% static 'img/crowfunding.jpg' %}">
+						<p> <big><b>CROWFUNDING </b></big> </p>
+						<p> <small>FINANCIAMIENTO </small> </p>
+						<div style="text-align: justify; ">Sigue nuestras redes sociales para informarte
+						acerca de las diversas campañas y actividades que realizamos para obtener
+						financiamiento para seguir ayudando.</div>
+						<P>  </P>
+						<table width="100" border="0" cellspacing="0" cellpadding="2">
+						<tr bgcolor="#000000">
+						<td>
+						<table width="100%" border="0" cellspacing="0" cellpadding="4">
+						<tr bgcolor="#FFFFFF">
+						<td><b> CAMPAÑAS </b></td>
+						</tr>
+						</table>
+						</td>
+						</tr>
+						</table>
+						<p></p>
+					</div>
+			</div>
+		</div>
+
 	{% endblock %}
 
 	{%block footer %}
-	<h5>Soy el footer del base</h5>
+		<div class="row segundocolor">
+			<div class="col-xs-12 start-xs">
+				<p><a name="contacto"><font color=black>CONTACTO</font></a> 
+				<p>Si quieres contactarte con nostros escribenos al Email: contacto@misperris.cl</p>
+				<p>Desarrollo Web y Mobile</p>
+			</div>
+		</div>
+
+
 	{% endblock %}
 
 </body>

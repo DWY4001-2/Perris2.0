@@ -6,11 +6,20 @@ from apps.mascota.models import Mascota
 class Region(models.Model):
 	nombre_region = models.CharField(max_length=50)
 
+	def __str__(self):
+		return '{}'.format(self.nombre_region)
+
 class Ciudad(models.Model):
 	nombre_ciudad = models.CharField(max_length=50)
 
+	def __str__(self):
+		return '{}'.format(self.nombre_ciudad)
+
 class Vivienda(models.Model):
 	tipo_vivienda = models.CharField(max_length=50)
+
+	def __str__(self):
+		return '{}'.format(self.tipo_vivienda)
 
 
 class Persona(models.Model):
@@ -19,7 +28,7 @@ class Persona(models.Model):
 	nombre = models.CharField(max_length=50)
 	fecha_nacimiento = models.DateField()
 	telefono = models.CharField(max_length=12)
-	Region = models.ManyToManyField(Region)
-	Ciudad = models.ManyToManyField(Ciudad)
-	Vivienda = models.ManyToManyField(Vivienda)
+	Region = models.ManyToManyField(Region, blank=True)
+	Ciudad = models.ManyToManyField(Ciudad, blank=True)
+	Vivienda = models.ManyToManyField(Vivienda, blank=True)
 

@@ -4,4 +4,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index_mascota(request):
-	return HttpResponse("index_mascota")
+	return render(request, 'base/base.html')
