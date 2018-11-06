@@ -30,12 +30,12 @@ class PersonaForm(forms.ModelForm):
 		}
 
 		widgets = {
-			'email': forms.TextInput(attrs={'class':'form-comtrol'}),
-			'run': forms.TextInput(attrs={'class':'form-comtrol'}),
-			'nombre': forms.TextInput(attrs={'class':'form-comtrol'}),
-			'fecha_nacimiento': forms.SelectDateWidget(attrs={'class':'form-comtrol'}),
-			'telefono': forms.TextInput(attrs={'class':'form-comtrol'}),
-			'Region': forms.Select(attrs={'class':'form-comtrol'}),
-			'Ciudad': forms.Select(attrs={'class':'form-comtrol'}),
-			'Vivienda': forms.Select(attrs={'class':'form-comtrol'}),
+			'email': forms.EmailInput(attrs={'class':'form-group-sm col-xs-6 center-xs'}),
+			'run': forms.TextInput(attrs={'class':'form-group col-xs-6 center-xs'}),
+			'nombre': forms.TextInput(attrs={'class':'form-group col-xs-6 center-xs'}),
+			'fecha_nacimiento': forms.SelectDateWidget(attrs={'class':'form-group col-xs-6 center-xs'}),
+			'telefono': forms.TextInput(attrs={'class':'form-group col-xs-6 center-xs'}),
+			'Region': forms.Select(attrs={'class':'form-group col-xs-6 center-xs'}),
+			'Ciudad': forms.Select(attrs={'class':'form-group col-xs-6 center-xs'}),
+			'Vivienda': forms.Select(attrs={'class':'form-group col-xs-6 center-xs'}),
 		}

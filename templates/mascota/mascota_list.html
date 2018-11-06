@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="table-responsive">
+<table class="table table-bordered table-hover">
+	<thead>
+		<tr class="info">
+			<th>Foto</th>
+			<th>Nombre</th>
+			<th>Raza</th>	
+			<th>Descripcion</th>
+			<th>Estado</th>
+			<th>Acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% if mascotas %}
+			{% for mascota in mascotas %}
+			<tr>
+				<td>{{ mascota.foto }}</td>
+				<td>{{ mascota.nombre }}</td>
+				<td>{{ mascota.raza }}</td>
+				<td>{{ mascota.descripcion }}</td>
+				<td>{{ mascota.estado }}</td>
+				<td><a class="btn btn-primary" href={% url 'mascota_editar' mascota.id %}>Editar</a>
+				<a class="btn btn-danger" href={% url 'mascota_eliminar' mascota.id %}>Eliminar</a></td>
+			{% endfor %}
+
+		{% else %}
+		<h1>No hay registro de Mascotas Disponibles</h1>
+		{% endif %}
+	</tbody>
+</table>
+</div>
+
+{% endblock %}
+
+{%block footer %}
+
+{% endblock %}

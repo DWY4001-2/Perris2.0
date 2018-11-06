@@ -1,22 +1,21 @@
 {% extends 'base/base.html' %}
 
 {% block title %}
-Formulario
+Registro
 {% endblock %}
 
+
 {% block content %}
-<div class="col-xs-12 center-xs"></div>
-<h2>Formulario de Registro</h2> 
+<div class="col-xs-12 center-xs">
 
-
+<h2>Registro de Mascota</h2> 
 <form method="post">
 	{% csrf_token %}
 	{{ form.as_p }}
 	<button type="submit">Guardar</button>
 </form>
 
-
-
+</div>s
 {% endblock %}
 
 {%block footer %}

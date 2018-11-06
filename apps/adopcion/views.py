@@ -14,7 +14,7 @@ def adopcion_view(request):
 		form = PersonaForm(request.POST)
 		if form.is_valid():
 			form.save()
-		return redirect('index')
+		return redirect('adopcion:index')
 	else:
 		form = PersonaForm()
 
