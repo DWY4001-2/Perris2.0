@@ -1,5 +1,5 @@
 from django.db import models
-from apps.mascota.models import Mascota
+
 
 # Create your models here.
 
@@ -28,7 +28,7 @@ class Persona(models.Model):
 	nombre = models.CharField(max_length=50)
 	fecha_nacimiento = models.DateField()
 	telefono = models.CharField(max_length=12)
-	Region = models.ManyToManyField(Region, blank=True)
-	Ciudad = models.ManyToManyField(Ciudad, blank=True)
-	Vivienda = models.ManyToManyField(Vivienda, blank=True)
+	Region = models.ForeignKey(Region)
+	Ciudad = models.ForeignKey(Ciudad)
+	Vivienda = models.ForeignKey(Vivienda)
 

@@ -1,11 +1,10 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-
-<div class="table-responsive">
-<table class="table table-bordered table-hover">
+<p>
+<table class="table table-bordered">
 	<thead>
-		<tr class="info">
+		<tr>
 			<th>Foto</th>
 			<th>Nombre</th>
 			<th>Raza</th>	
@@ -15,16 +14,18 @@
 		</tr>
 	</thead>
 	<tbody>
-		{% if mascotas %}
-			{% for mascota in mascotas %}
+		{% if object_list %}
+			{% for mascota in object_list %}
 			<tr>
 				<td>{{ mascota.foto }}</td>
 				<td>{{ mascota.nombre }}</td>
 				<td>{{ mascota.raza }}</td>
 				<td>{{ mascota.descripcion }}</td>
 				<td>{{ mascota.estado }}</td>
-				<td><a class="btn btn-primary" href={% url 'mascota_editar' mascota.id %}>Editar</a>
-				<a class="btn btn-danger" href={% url 'mascota_eliminar' mascota.id %}>Eliminar</a></td>
+				<td>
+					<a class="btn btn-success" href={% url 'mascota:mascota_editar' mascota.id %}>Editar</a>
+					<a class="btn btn-danger" href={% url 'mascota:mascota_eliminar' mascota.id %}>Eliminar</a>
+				</td>
 			{% endfor %}
 
 		{% else %}
@@ -32,10 +33,25 @@
 		{% endif %}
 	</tbody>
 </table>
-</div>
+
+</p>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+    {% if page_obj.has_previous %}
+      <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1">Anterior</a>
+      {% endif %}
+    </li>
+    <li class="page-item">
+    	{% if page_obj.has_next %}
+      <a class="page-link" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+      {% endif %}
+    </li>
+  </ul>
+</nav>
 
 {% endblock %}
 
 {%block footer %}
-
 {% endblock %}

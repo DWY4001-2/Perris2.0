@@ -17,5 +17,4 @@ def adopcion_view(request):
 		return redirect('adopcion:index')
 	else:
 		form = PersonaForm()
-
 	return render(request, 'Persona/persona_form.html', {'form':form})

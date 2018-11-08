@@ -1,6 +1,7 @@
 from django import forms
 
 from apps.adopcion.models import Persona
+from django.forms import extras 
 
 class PersonaForm(forms.ModelForm):
 
@@ -30,12 +31,16 @@ class PersonaForm(forms.ModelForm):
 		}
 
 		widgets = {
-			'email': forms.EmailInput(attrs={'class':'form-group-sm col-xs-6 center-xs'}),
-			'run': forms.TextInput(attrs={'class':'form-group col-xs-6 center-xs'}),
-			'nombre': forms.TextInput(attrs={'class':'form-group col-xs-6 center-xs'}),
-			'fecha_nacimiento': forms.SelectDateWidget(attrs={'class':'form-group col-xs-6 center-xs'}),
-			'telefono': forms.TextInput(attrs={'class':'form-group col-xs-6 center-xs'}),
-			'Region': forms.Select(attrs={'class':'form-group col-xs-6 center-xs'}),
-			'Ciudad': forms.Select(attrs={'class':'form-group col-xs-6 center-xs'}),
-			'Vivienda': forms.Select(attrs={'class':'form-group col-xs-6 center-xs'}),
+			'email': forms.EmailInput(),
+			'run': forms.TextInput(),
+			'nombre': forms.TextInput(),
+			'fecha_nacimiento': forms.SelectDateWidget(years = 
+				('1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', 
+     			'1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', 
+     			'1996', '1997', '1998', '1999', '2000')),
+			'telefono': forms.TextInput(),
+			'Region': forms.Select(),
+			'Ciudad': forms.Select(),
+			'Vivienda': forms.Select(),
+
 		}

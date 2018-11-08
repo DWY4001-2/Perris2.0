@@ -1,36 +1,70 @@
 {% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
 <header>
 
 <link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 <style>
-	.primercolor { background	: #6dccaa;
-		color			: white;
-		font-family		: calibri;
-		font-weight		: bold;
-		font-size		: 24px;
-	}
-		seccionBlanca
+		* {
+			padding:0px;
+			margin:0px;
+		}
+		}
+		ul, ol {
+			list-style:none;
+		}
+		.nav li a {
+			background-color: #6dccaa;
+			color: #fff;
+			text-decoration:none;
+			padding:10px 43px;
+			display:inline-block;
+		}
+		.nav li a:hover {
+			background-color:#dbd9d4;
+		}
+		.nav > li {
+			float:left
+		}
+		.nav li ul {
+			display:none;
+			position: absolute;
+			min-width:140px;
+		}
+		.nav li:hover > ul {
+			display:table;
+		}
 </style>
 
 		<div class="row primercolor">
 			<div class="col-xs-12 col-sm-4 center-xs">
-			<img src="{% static 'img/logo.png' %}">
-			</div>		
-			<div class="col-xs-12 col-sm-2 center-xs">
-			<p> Inicio</p> 
-			</div>
-			<div class="col-xs-12 col-sm-2 center-xs">
-			<p>Quiénes Somos</p>
-			</div>
-			<div class="col-xs-12 col-sm-2 center-xs">
-				<p>Servicios </p>
-			</div>
-			<div class="col-xs-12 col-sm-2 center-xs">
-				<p> Contáctanos</p> 
-			</div>				
-			<div class="col-xs-12 center-xs">
-		</div>
+			<img class="img-responsive"  src="{% static 'img/logo.png' %}">
+		</div>		
 
+		<ul class="nav">
+			<div class="col-xs-12 col-sm-2 center-xs">
+			<li><a href="{% url 'adopcion:index' %}">Inicio</a></li>
+			</div>
+			<div class="col-xs-12 col-sm-2 center-xs">
+			<li> <a href=""><font color=white>Quiénes Somos</font></a></li>
+			</div>
+			<div class="col-xs-12 col-sm-2 center-xs">
+			<li> <a href="">Servicios </a>
+				<ul>
+					<li><a href="{% url 'mascota:mascota_crear' %}">Ingresar Mascotas</a></li>
+					<li><a href="{% url 'mascota:mascota_listar' %}">Listar Mascotas</a></li>
+				</ul>
+			</li>
+			</div>
+			<div class="col-xs-12 col-sm-2 center-xs">
+			<li><a href="{% url 'adopcion:persona_nueva' %}">Contáctanos</a></li>
+			</div>
+
+			<div class="col-xs-12 center-xs"></div>
+		</ul>
 </header>
+
+</html>

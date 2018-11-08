@@ -8,7 +8,6 @@ class MascotaForm(forms.ModelForm):
 		model = Mascota
 
 		fields = [
-			'foto',
 			'nombre',
 			'raza',
 			'descripcion',
@@ -16,7 +15,6 @@ class MascotaForm(forms.ModelForm):
 		]
 
 		labels = {
-			'foto': 'Foto',
 			'nombre': 'Nombre',
 			'raza': 'Raza',
 			'descripcion': 'Descripción',
@@ -24,7 +22,6 @@ class MascotaForm(forms.ModelForm):
 		}
 
 		widgets = {
-			'foto': forms.FileInput(),
 			'nombre': forms.TextInput(attrs={'class':'form-control col-xs-12'}),
 			'raza': forms.TextInput(attrs={'class':'form-control col-xs-12'}),
 			'descripcion': forms.TextInput(attrs={'class':'form-control col-xs-12'}),

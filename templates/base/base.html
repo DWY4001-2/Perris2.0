@@ -5,6 +5,8 @@
  	<title>{% block title %}Mis Perris {% endblock %}</title>
 
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="{% static 'js/jR3DCarousel.js' %}"></script>
@@ -32,8 +34,7 @@
 
 
 	{% block content %}
-
-			<div class="row center-sm">
+			<div class="row primercolor center-sm">
 			<div class="carousel-demo">
 
 			<script>
@@ -110,17 +111,16 @@
 			</div>
 		</div>
 
+		<div class="row segundocolor">
+		<div class="col-xs-12 end-xs">
+			<p><button class="btn btn-success" type="submit"><a href="{% url 'logout' %}"><font color=white>Salir</font></a></button></p> 
+		</div>
+		</div>
+
 	{% endblock %}
 
 	{%block footer %}
-		<div class="row segundocolor">
-			<div class="col-xs-12 start-xs">
-				<p><a name="contacto"><font color=black>CONTACTO</font></a> 
-				<p>Si quieres contactarte con nostros escribenos al Email: contacto@misperris.cl</p>
-				<p>Desarrollo Web y Mobile</p>
-			</div>
-		</div>
-
+		<p>Desarrollo Web y Mobile</p>
 
 	{% endblock %}
 
